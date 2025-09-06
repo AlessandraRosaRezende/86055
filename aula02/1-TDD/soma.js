@@ -1,7 +1,25 @@
 // Declaração da função 'soma' que recebe dois parâmetros: 'num1' e 'num2'
 // A função está vazia, então não realiza nenhuma operação e retorna 'undefined' por padrão
-const soma = (num1, num2) => {
+// const soma = (...numeros) => {
+//   if (numeros.length === 0) return 0;
   
+//   let validInput = true;
+//   for (let index = 0; index < numeros.length && validInput; index++) {
+//     if (typeof numeros[index] !== 'number') validInput = false;
+//   }
+//   if (!validInput) return null;
+  
+//   let resultado = 0;
+//   for (let index = 0; index < numeros.length; index++) {
+//     resultado += numeros[index];
+//   }
+//   return resultado;
+// }
+
+const soma = (...numeros) => {
+  if (numeros.length === 0) return 0;
+  if (!numeros.every(num => typeof num === 'number')) return null;
+  return numeros.reduce((prev, current) => prev + current);
 }
 
 // Aqui estamos criando duas "caixas" (ou "variáveis") para guardar informações.
@@ -11,15 +29,15 @@ let testesTotais = 4;
 
 // Agora vamos testar nossa função 'soma' para ver se ela está funcionando corretamente.
 
-// Teste 1: Verificamos se a função retorna 'null' quando um dos ingredientes não é um número.
+// Teste 1: Verificamos se a função retorna 'null' quando um dos parâmetros não é um número.
 console.log('Teste 1: A função deve retornar nulo se algum parâmetro não for numérico');
-let resultadoTeste1 = soma("2", 2);
+let resultadoTeste1 = soma("2", 2, 3, "a");
 if (resultadoTeste1 === null) {
   console.log('Teste 1 passou');
   testesAprovados++;
 } else console.log(`Falha no teste 1, esperava 'null' mas recebi ${typeof resultadoTeste1}`);
 
-// Teste 2: Verificamos se a função retorna '0' quando não damos nenhum ingrediente para ela.
+// Teste 2: Verificamos se a função retorna '0' quando não damos nenhum parâmetro para ela.
 console.log('Teste 2: A função deve retornar 0 se nenhum parâmetro for passado');
 let resultadoTeste2 = soma();
 if (resultadoTeste2 === 0) {
