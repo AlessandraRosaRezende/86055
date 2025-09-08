@@ -4,7 +4,7 @@ const compression = require('express-compression');
 const app = express();
 
 app.use(compression({
-  brotli: { enabled: true, zlib: {} },
+  brotli: { enabled: true, zlib: {} }, // compactação com brotli
 }));
 
 app.get('/stringridiculamentegrande', (req, res) => {

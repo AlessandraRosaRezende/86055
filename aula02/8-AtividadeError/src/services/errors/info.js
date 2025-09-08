@@ -10,4 +10,8 @@ const invalidParamErrorInfo = (param) => {
   return `O parâmetro fornecido, "${param}", é inválido`
 }
 
+const invalidEmail = (param) => {
+  return `O email, "${param}", é inválido`
+}
+
 module.exports = { generateUserErrorInfo, invalidParamErrorInfo };

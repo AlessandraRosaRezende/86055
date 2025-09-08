@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   const { first_name, last_name, age, email } = req.body;
 
-  if (!first_name || !last_name || !email) {
+  if (!first_name || !last_name) {
     const error = CustomError.createError({
       name: "User creation error",
       cause: generateUserErrorInfo({ first_name, last_name, email }),
@@ -23,6 +23,17 @@ router.post('/', (req, res) => {
     })
     return res.send({ status: 'erro', payload: error })
   };
+
+  if (!email) {
+    const error = CustomError.createError({
+      name: "User creation error",
+      cause: invalidEmail({ email }),
+      message: "Erro tentando criar usuário",
+      code: EErrors.EMAIL_INVALID
+    })
+    return res.send({ status: 'erro', payload: error })
+  };
+
 
   const user = {
     first_name,

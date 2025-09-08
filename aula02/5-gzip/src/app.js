@@ -1,6 +1,9 @@
 const express = require('express');
+const compression = require('express-compression'); // gzip
 
 const app = express();
+
+app.use(compression()); // para usar o gzip
 
 app.get('/stringridiculamentegrande', (req, res) => {
   let string = 'Olá Coders, sou uma string ridiculamente grande!';

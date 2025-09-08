@@ -13,6 +13,9 @@ module.exports = (error, req, res, next) => {
     case EErrors.INVALID_PARAM:
       res.status(400).send({ status: 'error', error: 'Parâmetro inválido' });
       break
+    case EErrors.EMAIL_INVALID:
+      res.status(401).send({ status: 'error', error: 'Email inválido' });
+      break
     default:
       res.send({ status: 'error', error: 'Erro interno do servidor' })
   }
