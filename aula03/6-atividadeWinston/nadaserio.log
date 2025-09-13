@@ -1,0 +1,9 @@
+2025-09-13T14:26:37.486Z [http]: GET /
+2025-09-13T14:26:37.500Z [warn]: Rota inicial - no warn
+2025-09-13T14:26:37.501Z [error]: Rota inicial - no error
+2025-09-13T14:26:37.501Z [http]: Rota inicial - no http
+2025-09-13T14:27:51.832Z [http]: GET /
+2025-09-13T14:27:51.841Z [warn]: Rota inicial - no warn
+2025-09-13T14:27:51.841Z [error]: Rota inicial - no error
+2025-09-13T14:27:51.842Z [http]: Rota inicial - no http
+2025-09-13T14:27:51.842Z [verbose]: Rota inicial - no verbose
