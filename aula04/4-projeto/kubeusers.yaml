@@ -26,13 +26,13 @@ spec:
         app: kubeusers
     spec:
       containers:
-      - name: kubecontainer
-        image: alerosa/userscreator:1.0.0
-        ports:
-          - containerPort: 8080
-        env:
-          - name: MONGO_URL
-            value: "mongodb+srv://alessandra:coder@clustercoder.n6nab.mongodb.net/coder"
-          - name: PORT
-            value: "8080"
-        imagePullPolicy: Always
+        - name: kubecontainer
+          image: alerosa/userscreator86055
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGO_URL
+              value: "mongodb+srv://alessandra:coder@clustercoder.n6nab.mongodb.net/coder"
+            - name: PORT
+              value: "8080"
+          imagePullPolicy: Always
