@@ -1,0 +1,18 @@
+const express = require('express');
+const logMid = require('./middlewares/logMid');
+
+const app = express();
+
+app.use(logMid);
+
+app.get('/', (req, res) => {
+  req.logger.warn('Alerta!!!')
+  req.logger.info('Informação')
+  req.logger.fatal('Fatal')
+  // req.logger.erro('Erro')
+  res.send('Teste de logger');
+});
+
+app.listen(8080, () => {
+  console.log('App listening on port 8080');
+});
